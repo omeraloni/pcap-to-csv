@@ -1,3 +1,5 @@
-*.csv
+pcaps/
 *.pcap
 *.pcapng
+output/
+*.csv
