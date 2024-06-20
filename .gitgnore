@@ -3,3 +3,4 @@ pcaps/
 *.pcapng
 output/
 *.csv
+.python-version
