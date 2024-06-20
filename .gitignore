@@ -4,3 +4,4 @@ pcaps/
 output/
 *.csv
 .python-version
+__pycache__
