@@ -6,6 +6,7 @@ This project provides a script to convert PCAP/PCAPNG files to CSV format.
 
 - Convert PCAP/PCAPNG files to CSV format.
 - Extract and store packet information such as time, source, destination, source port, destination port, and protocol.
+- For TCP packets, extract and store TCP flags in a formatted list.
 
 ## Requirements
 
@@ -54,18 +55,18 @@ This project provides a script to convert PCAP/PCAPNG files to CSV format.
 3. **Example**:
 
     ```bash
-    poetry run pcap-to-csv FVE_11_az_14_30_dne_12_07_2023.pcapng output.csv
+    poetry run pcap-to-csv example.pcapng output.csv
     ```
 
 ## CSV Output Example
 
 After running the script, the CSV file will contain headers and data similar to the following:
 
-| time                | src         | dst         | srcport | dstport | protocol |
-|---------------------|-------------|-------------|---------|---------|----------|
-| 2023-07-12 14:30:01 | 192.168.1.2 | 192.168.1.1 | 12345   | 1502    | TCP      |
-| 2023-07-12 14:30:02 | 192.168.1.3 | 192.168.1.1 | 12346   | 1502    | TCP      |
-| 2023-07-12 14:30:03 | 192.168.1.4 | 192.168.1.1 | 12347   | 1502    | UDP      |
+| time                | src         | dst         | srcport | dstport | protocol | flags      |
+|---------------------|-------------|-------------|---------|---------|----------|------------|
+| 2023-07-12 14:30:01 | 192.168.1.2 | 192.168.1.1 | 12345   | 1502    | TCP      | SYN        |
+| 2023-07-12 14:30:02 | 192.168.1.3 | 192.168.1.1 | 12346   | 1502    | TCP      | SYN; ACK   |
+| 2023-07-12 14:30:03 | 192.168.1.4 | 192.168.1.1 | 12347   | 1502    | UDP      | None       |
 
 ## Development
 

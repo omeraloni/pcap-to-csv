@@ -15,7 +15,7 @@ TCP_FLAGS = {
 def convert_flags_to_list(flags_hex):
     flags = int(flags_hex, 16)
     flag_list = [name for value, name in TCP_FLAGS.items() if flags & value]
-    return '[' + ', '.join(flag_list) + ']' if flag_list else 'None'
+    return '; '.join(flag_list) if flag_list else 'None'
 
 def convert_pcap_to_csv(pcap_file, output_csv):
     # Load the pcap/pcapng file
